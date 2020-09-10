@@ -13,7 +13,7 @@ class DaoPessoa {
     }
 
     public function porId(int $id): ?Pessoa {
-        $sql = "SELECT id, nome, idade, endereco, cpf, telefone FROM Pessoa where id = ?";
+        $sql = "SELECT nome, idade, endereco, cpf, telefone FROM Pessoa where id = ?";
         $stmt = $this->connection->prepare($sql);
         $pes = null;
         if ($stmt) {

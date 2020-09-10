@@ -21,11 +21,12 @@ if (! $conn->connect()) {
 $daoMarca = new DaoMarca($conn);
 $daoProduto = new DaoProduto($conn);
 $daoDepartamento = new DaoDepartamento($conn);
+$daoPessoa = new daoPessoa($conn);
 
 $marcas = $daoMarca->todos();
 $departamentos = $daoDepartamento->todos();
 $produtos = $daoProduto->todos();
-$pessoa = $daoPessoa->todos();
+$pessoas = $daoPessoa->todos();
 
 
 ob_start();
@@ -39,7 +40,7 @@ ob_start();
 
     <!-- Departamentos -->
     <div class="col-md-4" >
-      <h3>Departamentos</h3>
+      <h2>Departamentos</h2>
       <?php 
         if (count($departamentos) >0) {
           echo "<ul>";
@@ -54,7 +55,7 @@ ob_start();
 
     <!-- Marcas -->
     <div class="col-md-4" >
-      <h3>Marcas</h3>
+      <h2>Marcas</h2>
       <?php 
         if (count($marcas) >0) {
           echo "<ul>";
@@ -70,7 +71,7 @@ ob_start();
 
     <!-- Produtos -->
     <div class="col-md-4" >
-      <h3>Produtos</h3>
+      <h2>Produtos</h2>
       <?php 
         if (count($produtos) >0) {
           echo "<ul>";
@@ -85,9 +86,10 @@ ob_start();
           echo "<h4>Nenhum produto cadastrado</h4>";
       ?>
     </div>
-
+    
+    <!-- Pessoas --> 
     <div class="col-md-4" >
-      <h3>Pessoas</h3>
+      <h2>Pessoas</h2>
       <?php 
         if (count($pessoas) >0) {
           echo "<ul>";

@@ -13,8 +13,8 @@ if (! $conn->connect()) {
     die();
 }
 
-$DaoPessoa = new DaoPessoa($conn);
-$pessoa = $DaoPessoa->porId( $_POST['id'] );
+$daoPessoa = new DaoPessoa($conn);
+$pessoa = $daoPessoa->porId( $_POST['id'] );
     
 if ( $pessoa )
 {  
